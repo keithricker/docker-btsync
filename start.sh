@@ -16,7 +16,7 @@ set -e
   "upload_limit": 0,
   "shared_folders": [
     {
-      "secret": "$BTSSECRET",
+      "secret": "${BTSSECRET}",
       "dir": "/Sync",
       "use_relay_server": true,
       "use_tracker": true,
