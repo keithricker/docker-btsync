@@ -3,6 +3,7 @@ FROM phusion/baseimage:0.9.15
 ENV LANG en_US.UTF-8
 ENV BTSUNAME admin
 ENV BTSPASS password
+ENV BTSSECRET uber-secret-uncrackable-string-of-characters
 
 RUN locale-gen $LANG
 
@@ -14,7 +15,7 @@ ADD start.sh /start.sh
 RUN chmod 777 /start.sh
 RUN mkdir /Sync && chmod -R 777 /Sync
 
-VOLUME ["/data"]
+VOLUME ["/data","/Sync"]
 EXPOSE 3369/udp
 EXPOSE 8888
 
