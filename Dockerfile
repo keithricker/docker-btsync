@@ -3,7 +3,6 @@ FROM phusion/baseimage:0.9.15
 ENV LANG en_US.UTF-8
 ENV BTSUNAME admin
 ENV BTSPASS password
-ENV BTSSECRET uber-secret-uncrackable-string-of-characters
 
 RUN locale-gen $LANG
 
