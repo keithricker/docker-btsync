@@ -9,7 +9,6 @@ set -e
 {
   "device_name": "Sync Server",
   "listening_port": 3369,
-  "storage_path": "/.sync",
   "check_for_updates": false,
   "use_upnp": false,
   "download_limit": 0,
