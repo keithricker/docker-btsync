@@ -26,7 +26,7 @@ set -e
     }
   ],  
   "webui": {
-    "listen": "0.0.0.0:8888",
+    "listen": "0.0.0.0:8384",
     "login": "${BTSUNAME}",
     "password": "${BTSPASS}"
   }
