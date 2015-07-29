@@ -8,7 +8,7 @@ RUN locale-gen $LANG
 
 ADD http://download-cdn.getsyncapp.com/stable/linux-x64/BitTorrent-Sync_x64.tar.gz /btsync.tar.gz
 RUN tar xf /btsync.tar.gz && \
-    rm /btsync.tar.gz
+    rm /btsync.tar.gz && mv btsync /usr/bin/btsync
 
 ADD start.sh /start.sh
 RUN chmod 777 /start.sh
