@@ -16,6 +16,6 @@ RUN mkdir /Sync && chmod -R 777 /Sync
 
 VOLUME ["/data","/Sync"]
 EXPOSE 3369/udp
-EXPOSE 8888
+EXPOSE 8384
 
 CMD ["/start.sh"]
