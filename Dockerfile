@@ -4,6 +4,7 @@ ENV LANG en_US.UTF-8
 ENV BTSUNAME admin
 ENV BTSPASS password
 ENV SYNCDIR /Sync
+ENV ENABLE_GUI noway
 
 RUN locale-gen $LANG
 
