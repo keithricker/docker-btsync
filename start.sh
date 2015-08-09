@@ -7,7 +7,7 @@ if [ ! -d "$SYNCDIR" ]; then mkdir "$SYNCDIR" && chmod 777 "$SYNCDIR"; fi
 
 [ ! -L /.sync ] && ln -sf /btsync /.sync
 
-[ ! -f /btsync/btsync.conf && "$ENABLE_GUI" = 'noway' ] && cat > /btsync/btsync.conf <<EOF
+if [ ! -f /btsync/btsync.conf] && [ "$ENABLE_GUI" = 'noway' ]; then cat > /btsync/btsync.conf <<EOF
 {
   "device_name": "Sync Server",
   "listening_port": 3369,
@@ -32,9 +32,10 @@ if [ ! -d "$SYNCDIR" ]; then mkdir "$SYNCDIR" && chmod 777 "$SYNCDIR"; fi
     "password": "${BTSPASS}"
   }
 }
-EOF
+EOF;
+fi
 
-[ ! -f /btsync/btsync.conf && "$ENABLE_GUI" = 'way' ] && cat > /btsync/btsync.conf <<EOF
+if [ ! -f /btsync/btsync.conf ] && [ "$ENABLE_GUI" = 'way' ]; then cat > /btsync/btsync.conf <<EOF
 {
   "device_name": "Sync Server",
   "listening_port": 3369,
@@ -48,7 +49,8 @@ EOF
     "password": "${BTSPASS}"
   }
 }
-EOF
+EOF;
+fi
 
 btsync --nodaemon --config /btsync/btsync.conf
 bin/bash
