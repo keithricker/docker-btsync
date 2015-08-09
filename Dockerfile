@@ -15,6 +15,7 @@ ADD start.sh /start.sh
 RUN chmod 777 /start.sh
 RUN mkdir /Sync && chmod -R 777 /Sync
 RUN mkdir /sync && chmod -R 777 /sync
+RUN mkdir /btsync && chmod -R 777 /btsync
 
 EXPOSE 3369/udp
 EXPOSE 8384
