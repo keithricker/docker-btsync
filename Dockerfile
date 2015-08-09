@@ -14,9 +14,8 @@ RUN tar xf /btsync.tar.gz && \
 ADD start.sh /start.sh
 RUN chmod 777 /start.sh
 RUN mkdir /Sync && chmod -R 777 /Sync
-RUN mkdir /data && chmod -R 777 /data
+RUN mkdir /sync && chmod -R 777 /sync
 
-VOLUME ["/data","/Sync"]
 EXPOSE 3369/udp
 EXPOSE 8384
 
