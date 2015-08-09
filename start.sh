@@ -3,7 +3,8 @@
 set -e
 
 [ "$BTSSECRET" ] || BTSSECRET=$(btsync --generate-secret)
-[ ! -L /.sync ] && ln -sf /data /.sync
+
+[ ! -L /.sync ] && ln -sf /btsync /.sync
 
 [ ! -f /data/btsync.conf ] && cat > /data/btsync.conf <<EOF
 {
@@ -16,7 +17,7 @@ set -e
   "shared_folders": [
     {
       "secret": "${BTSSECRET}",
-      "dir": "/Sync",
+      "dir": "${SYNCDIR}",
       "use_relay_server": true,
       "use_tracker": true,
       "use_dht": false,
@@ -32,5 +33,5 @@ set -e
 }
 EOF
 
-btsync --nodaemon --config /data/btsync.conf
+btsync --nodaemon --config /btsync/btsync.conf
 bin/bash
