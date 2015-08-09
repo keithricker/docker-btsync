@@ -6,7 +6,7 @@ set -e
 
 [ ! -L /.sync ] && ln -sf /btsync /.sync
 
-[ ! -f /data/btsync.conf ] && cat > /data/btsync.conf <<EOF
+[ ! -f /btsync/btsync.conf ] && cat > /btsync/btsync.conf <<EOF
 {
   "device_name": "Sync Server",
   "listening_port": 3369,
