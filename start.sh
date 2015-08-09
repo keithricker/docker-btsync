@@ -3,6 +3,7 @@
 set -e
 
 [ "$BTSSECRET" ] || BTSSECRET=$(btsync --generate-secret)
+[ -d "$SYNCDIR" ] || mkdir "$SYNCDIR"
 
 [ ! -L /.sync ] && ln -sf /btsync /.sync
 
